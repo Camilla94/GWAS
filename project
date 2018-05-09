@@ -1,4 +1,5 @@
 per gene test:
 
-./gcta64 --bfile test --maf 0.01 --fastBAT data.txt --fastBAT-gene-list glist-hg19.txt --out test --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.1 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 1 --thread-num 10
 
+skal køres 22 gange. 1-22. husk at ændre out også  
