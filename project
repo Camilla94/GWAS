@@ -1,4 +1,4 @@
 per gene test:
 
-./gcta --bfile test --maf 0.01 --fastBAT data.txt --fastBAT-gene-list glist-hg19.txt --out test --thread-num 10
+./gcta64 --bfile test --maf 0.01 --fastBAT data.txt --fastBAT-gene-list glist-hg19.txt --out test --thread-num 10
 
