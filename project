@@ -1,5 +1,84 @@
-per gene test:
+# Per gene test:
+# Finding significant genes affecting BMI.
+#In R:
+
+library(dplyr)
+
+# Importing the data
+df <- read.table("data.txt", header=TRUE, sep="")
+
+# Making a subset. we only want 2 columns: SNP and P
+ndf <- df[, c(3,9)]
+
+# Exporting data
+write.table(ndf, "newdata.txt", append = FALSE, sep = " ",
+            row.names = FALSE, col.names = TRUE, quote=FALSE)
+
+# In powershell:
 
 ./gcta64 --bfile 1000G.EUR.QC.1 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 1 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.2 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 2 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.3 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 3 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.4 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 4 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.5 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 5 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.6 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 6 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.7 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 7 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.8 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 8 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.9 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 9 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.10 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 10 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.11 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 11 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.12 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 12 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.13 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 13 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.14 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 14 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.15 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 15 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.16 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 16 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.17 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 17 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.18 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 18 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.19 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 19 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.20 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 20 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.21 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 21 --thread-num 10
+./gcta64 --bfile 1000G.EUR.QC.22 --maf 0.01 --fastBAT newdata.txt --fastBAT-gene-list glist-hg19.txt --out 22 --thread-num 10
 
-skal køres 22 gange. 1-22. husk at ændre out også  
+# Importing fastBAT files to R
+# In R:
+chr1 <- read.table("1.gene.fastbat", header=TRUE, sep="")
+chr2 <- read.table("2.gene.fastbat", header=TRUE, sep="")
+chr3 <- read.table("3.gene.fastbat", header=TRUE, sep="")
+chr4 <- read.table("4.gene.fastbat", header=TRUE, sep="")
+chr5 <- read.table("5.gene.fastbat", header=TRUE, sep="")
+chr6 <- read.table("6.gene.fastbat", header=TRUE, sep="")
+chr7 <- read.table("7.gene.fastbat", header=TRUE, sep="")
+chr8 <- read.table("8.gene.fastbat", header=TRUE, sep="")
+chr9 <- read.table("9.gene.fastbat", header=TRUE, sep="")
+chr10 <- read.table("10.gene.fastbat", header=TRUE, sep="")
+chr11 <- read.table("11.gene.fastbat", header=TRUE, sep="")
+chr12 <- read.table("12.gene.fastbat", header=TRUE, sep="")
+chr13 <- read.table("13.gene.fastbat", header=TRUE, sep="")
+chr14 <- read.table("14.gene.fastbat", header=TRUE, sep="")
+chr15 <- read.table("15.gene.fastbat", header=TRUE, sep="")
+chr16 <- read.table("16.gene.fastbat", header=TRUE, sep="")
+chr17 <- read.table("17.gene.fastbat", header=TRUE, sep="")
+chr18 <- read.table("18.gene.fastbat", header=TRUE, sep="")
+chr19 <- read.table("19.gene.fastbat", header=TRUE, sep="")
+chr20 <- read.table("20.gene.fastbat", header=TRUE, sep="")
+chr21 <- read.table("21.gene.fastbat", header=TRUE, sep="")
+chr22 <- read.table("22.gene.fastbat", header=TRUE, sep="")
+
+# Concatenating
+all_chromosomes <- rbind(chr1, chr2, chr3, chr4, chr5, 
+chr6, chr7, chr8, chr9, chr10, chr11, chr12, chr13, chr14, chr15, chr16, chr17, chr18, chr19, chr20, chr21, chr22)
+
+Estimating heritability:
+
+renaming columns:
+
+
+munge_sumstats.py \
+--sumstats data.txt \
+--out scz \
+
+ldsc.py \
+--h2 scz.sumstats.gz \
+--ref-ld-chr eur_w_ld_chr/ \
+--w-ld-chr eur_w_ld_chr/ \
+--out scz_h2
